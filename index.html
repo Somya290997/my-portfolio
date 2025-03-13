@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somya's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,15 +16,15 @@
             text-align: center;
         }
         header {
-            background: #222;
+            background: rgba(34, 34, 34, 0.9);
             color: white;
             padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            transition: background 0.3s;
         }
         nav ul {
             list-style: none;
@@ -45,17 +46,18 @@
         nav ul li a:hover {
             color: #00c3ff;
         }
-        section {
-            padding: 80px 20px;
-            margin-top: 60px;
-        }
-        #home {
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             background: linear-gradient(to right, #00c3ff, #3b5998);
             color: white;
-            padding: 100px 20px;
+            text-align: center;
         }
         .btn {
-            background: #fff;
+            background: white;
             color: #00c3ff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -87,9 +89,6 @@
             background: #222;
             color: white;
             padding: 15px 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
         }
         .social-links {
             margin-top: 10px;
@@ -117,20 +116,20 @@
         </nav>
     </header>
     
-    <section id="home">
+    <section class="hero" id="home">
         <h1>Welcome to My Portfolio</h1>
         <p>Hi, I'm <strong>Somya Pathak</strong>, a passionate <strong>Data Engineer</strong>.</p>
         <a href="#projects" class="btn">View My Work</a>
     </section>
     
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <h2>About Me</h2>
         <p>With 3 years of experience as a Data Engineer at Mastercard, I’ve had the opportunity to build and optimize data pipelines that power key business decisions. Along the way, I’ve worked with a variety of tools and technologies, including Scala, Spark, SQL, Python, Java, Apache Hadoop, Apache NiFi, and cloud platforms, ensuring real-time data flow with 100% Reconciliation accuracy.
             Currently, I’m pursuing a Master’s degree in Computer Science from University of Colorado Boulder, which is giving me the chance to dive deeper into areas of Machine learning, AI, NLP, Neural Networks, and data architecture. The combination of hands-on experience and academic learning keeps me sharp and excited about applying emerging technologies to solve real-world challenges.
             I’m truly passionate about using data to innovate, improve processes, and drive smarter decisions. I’m always eager to collaborate with others who share a similar drive for leveraging data to make a difference.</p>
     </section>
     
-    <section id="projects">
+    <section id="projects" data-aos="fade-up">
         <h2>Projects</h2>
         <div class="project-container">
             <div class="project">
@@ -154,12 +153,12 @@
         </div>
     </section>
     
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Email: somyapathak2910@gmail.com</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/somyapathak/" target="_blank">somyapathak</a></p>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/somyapathak/" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/somyapathak/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
     
@@ -175,6 +174,7 @@
                 section.scrollIntoView({ behavior: 'smooth' });
             });
         });
+        AOS.init();
     </script>
 </body>
 </html>
