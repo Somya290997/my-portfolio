@@ -3,56 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Somya's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             text-align: center;
         }
         header {
-            background: #333;
+            background: #222;
             color: white;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00c3ff;
         }
         section {
-            padding: 50px;
-            margin-top: 50px;
+            padding: 80px 20px;
+            margin-top: 60px;
+        }
+        #home {
+            background: linear-gradient(to right, #00c3ff, #3b5998);
+            color: white;
+            padding: 100px 20px;
+        }
+        .btn {
+            background: #fff;
+            color: #00c3ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background: #00c3ff;
+            color: white;
+        }
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
         .project {
             background: white;
             padding: 20px;
-            margin: 10px auto;
-            width: 80%;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .project:hover {
+            transform: scale(1.05);
         }
         footer {
-            background: #333;
+            background: #222;
             color: white;
-            padding: 10px 0;
+            padding: 15px 0;
             position: relative;
-            bottom: 0;
             width: 100%;
+            bottom: 0;
+        }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #00c3ff;
         }
     </style>
 </head>
@@ -70,7 +119,8 @@
     
     <section id="home">
         <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Somya Pathak, a passionate Data Engineer.</p>
+        <p>Hi, I'm <strong>Somya Pathak</strong>, a passionate <strong>Data Engineer</strong>.</p>
+        <a href="#projects" class="btn">View My Work</a>
     </section>
     
     <section id="about">
@@ -82,30 +132,35 @@
     
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>PaaS-based application integrated with APIs and OIDC-based apps</h3>
-            <p>Engineered and deployed a cloud-based React application for Security and Access Management,
+        <div class="project-container">
+            <div class="project">
+                <h3>PaaS-based application integrated with APIs and OIDC-based apps</h3>
+                <p>Engineered and deployed a cloud-based React application for Security and Access Management,
                 leveraging IBM Security Verify APIs. Designed an OIDC-based authentication system to securely generate access tokens for
                 both end-users and tenant administrators. Seamlessly integrated multiple APIs to develop a user-interactive helpdesk platform,
                 enhancing security, authentication, and access management capabilities.</p>
-        </div>
-        <div class="project">
-            <h3>Handwriting Prediction</h3>
-            <p>Designed and implemented a handwriting recognition model in Python to classify handwritten digits
+            </div>
+            <div class="project">
+                <h3>Handwriting Prediction</h3>
+                <p>Designed and implemented a handwriting recognition model in Python to classify handwritten digits
                 with high accuracy. Leveraged machine learning libraries for model training and optimization, achieving 96% accuracy in
                 predicting numerical inputs.</p>
-        </div>
-        <div class="project">
-            <h3>Titanic Survival Predictor:</h3>
-            <p>Developed a machine learning model to predict Titanic passenger survival, by implementing data
+            </div>
+            <div class="project">
+                <h3>Titanic Survival Predictor</h3>
+                <p>Developed a machine learning model to predict Titanic passenger survival, by implementing data
                 preprocessing, feature engineering, and classification algorithms to enhance model accuracy and performance.</p>
+            </div>
         </div>
     </section>
     
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: somyapathak2910@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/somyapathak/">somyapathak</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/somyapathak/" target="_blank">somyapathak</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/somyapathak/" target="_blank">LinkedIn</a>
+        </div>
     </section>
     
     <footer>
