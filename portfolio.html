@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 50px;
+            margin-top: 50px;
+        }
+        .project {
+            background: white;
+            padding: 20px;
+            margin: 10px auto;
+            width: 80%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Somya Pathak, a passionate Data Engineer.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>With 3 years of experience as a Data Engineer at Mastercard, I’ve had the opportunity to build and optimize data pipelines that power key business decisions. Along the way, I’ve worked with a variety of tools and technologies, including Scala, Spark, SQL, Python, Java, Apache Hadoop, Apache NiFi, and cloud platforms, ensuring real-time data flow with 100% Reconciliation accuracy.
+            Currently, I’m pursuing a Master’s degree in Computer Science from University of Colorado Boulder, which is giving me the chance to dive deeper into areas of Machine learning, AI, NLP, Neural Networks, and data architecture. The combination of hands-on experience and academic learning keeps me sharp and excited about applying emerging technologies to solve real-world challenges.
+            I’m truly passionate about using data to innovate, improve processes, and drive smarter decisions. I’m always eager to collaborate with others who share a similar drive for leveraging data to make a difference.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>PaaS-based application integrated with APIs and OIDC-based apps</h3>
+            <p>Engineered and deployed a cloud-based React application for Security and Access Management,
+                leveraging IBM Security Verify APIs. Designed an OIDC-based authentication system to securely generate access tokens for
+                both end-users and tenant administrators. Seamlessly integrated multiple APIs to develop a user-interactive helpdesk platform,
+                enhancing security, authentication, and access management capabilities.</p>
+        </div>
+        <div class="project">
+            <h3>Handwriting Prediction</h3>
+            <p>Designed and implemented a handwriting recognition model in Python to classify handwritten digits
+                with high accuracy. Leveraged machine learning libraries for model training and optimization, achieving 96% accuracy in
+                predicting numerical inputs.</p>
+        </div>
+        <div class="project">
+            <h3>Titanic Survival Predictor:</h3>
+            <p>Developed a machine learning model to predict Titanic passenger survival, by implementing data
+                preprocessing, feature engineering, and classification algorithms to enhance model accuracy and performance.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: somyapathak2910@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/somyapathak/">somyapathak</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Somya Pathak. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
