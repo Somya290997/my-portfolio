@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Somya Pathak</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #00c3ff, #3b5998);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm <strong>Somya Pathak</strong>, a passionate <strong>Data Engineer</strong>.</p>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <br>
+        <label class="upload-btn">
+            Upload Image
+            <input type="file" accept="image/*" style="display: none;" onchange="previewImage(event)">
+        </label>
+    </section>
+    
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector('.profile-pic').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
