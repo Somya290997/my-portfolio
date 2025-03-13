@@ -3,99 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somya Pathak</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        header {
-            background: rgba(34, 34, 34, 0.9);
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .menu-toggle {
-            font-size: 24px;
-            cursor: pointer;
-            display: none;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #00c3ff;
-        }
-        .container {
-            padding: 100px 20px;
-        }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .upload-btn {
-            margin-top: 10px;
-            display: inline-block;
-            padding: 10px 20px;
-            background: #00c3ff;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #222;
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-            }
-            nav ul.active {
-                display: flex;
-            }
-        }
-    </style>
+    <title>Home - Somya Pathak</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -118,9 +30,6 @@
     </section>
     
     <script>
-        function toggleMenu() {
-            document.querySelector('nav ul').classList.toggle('active');
-        }
         function previewImage(event) {
             const file = event.target.files[0];
             if (file) {
