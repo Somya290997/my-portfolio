@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Somya Pathak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         body {
@@ -18,23 +17,29 @@
         header {
             background: rgba(34, 34, 34, 0.9);
             color: white;
-            padding: 15px 0;
+            padding: 15px 20px;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            transition: background 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
         }
         nav ul li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
         nav ul li a {
             color: white;
@@ -46,135 +51,86 @@
         nav ul li a:hover {
             color: #00c3ff;
         }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: linear-gradient(to right, #00c3ff, #3b5998);
-            color: white;
-            text-align: center;
+        .container {
+            padding: 100px 20px;
         }
-        .btn {
-            background: white;
-            color: #00c3ff;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .upload-btn {
+            margin-top: 10px;
+            display: inline-block;
             padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s, color 0.3s;
-        }
-        .btn:hover {
             background: #00c3ff;
             color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
         }
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .project {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .project:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            background: #222;
-            color: white;
-            padding: 15px 0;
-        }
-        .social-links {
-            margin-top: 10px;
-        }
-        .social-links a {
-            color: white;
-            font-size: 20px;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #00c3ff;
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #222;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <section class="hero" id="home">
+    <section class="container">
         <h1>Welcome to My Portfolio</h1>
         <p>Hi, I'm <strong>Somya Pathak</strong>, a passionate <strong>Data Engineer</strong>.</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <br>
+        <label class="upload-btn">
+            Upload Image
+            <input type="file" accept="image/*" style="display: none;" onchange="previewImage(event)">
+        </label>
     </section>
-    
-    <section id="about" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>With 3 years of experience as a Data Engineer at Mastercard, I’ve had the opportunity to build and optimize data pipelines that power key business decisions. Along the way, I’ve worked with a variety of tools and technologies, including Scala, Spark, SQL, Python, Java, Apache Hadoop, Apache NiFi, and cloud platforms, ensuring real-time data flow with 100% Reconciliation accuracy.
-            Currently, I’m pursuing a Master’s degree in Computer Science from University of Colorado Boulder, which is giving me the chance to dive deeper into areas of Machine learning, AI, NLP, Neural Networks, and data architecture. The combination of hands-on experience and academic learning keeps me sharp and excited about applying emerging technologies to solve real-world challenges.
-            I’m truly passionate about using data to innovate, improve processes, and drive smarter decisions. I’m always eager to collaborate with others who share a similar drive for leveraging data to make a difference.</p>
-    </section>
-    
-    <section id="projects" data-aos="fade-up">
-        <h2>Projects</h2>
-        <div class="project-container">
-            <div class="project">
-                <h3>PaaS-based application integrated with APIs and OIDC-based apps</h3>
-                <p>Engineered and deployed a cloud-based React application for Security and Access Management,
-                leveraging IBM Security Verify APIs. Designed an OIDC-based authentication system to securely generate access tokens for
-                both end-users and tenant administrators. Seamlessly integrated multiple APIs to develop a user-interactive helpdesk platform,
-                enhancing security, authentication, and access management capabilities.</p>
-            </div>
-            <div class="project">
-                <h3>Handwriting Prediction</h3>
-                <p>Designed and implemented a handwriting recognition model in Python to classify handwritten digits
-                with high accuracy. Leveraged machine learning libraries for model training and optimization, achieving 96% accuracy in
-                predicting numerical inputs.</p>
-            </div>
-            <div class="project">
-                <h3>Titanic Survival Predictor</h3>
-                <p>Developed a machine learning model to predict Titanic passenger survival, by implementing data
-                preprocessing, feature engineering, and classification algorithms to enhance model accuracy and performance.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Email: somyapathak2910@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/somyapathak/" target="_blank">somyapathak</a></p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/somyapathak/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Somya Pathak. All Rights Reserved.</p>
-    </footer>
     
     <script>
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = document.querySelector(this.getAttribute('href'));
-                section.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        AOS.init();
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('active');
+        }
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector('.profile-pic').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
     </script>
 </body>
 </html>
